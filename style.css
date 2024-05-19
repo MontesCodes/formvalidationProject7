@@ -29,3 +29,25 @@ body {
   padding: 1rem 0 2rem 0;
   font-size: 2rem;
 }
+
+.form_control {
+  width: 100%;
+  border-radius: 5px;
+  padding: 0.85rem 0.8rem;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.form_Validation button {
+  display: block;
+  outline: none;
+  background: orange;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem 2rem;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
