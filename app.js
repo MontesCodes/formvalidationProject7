@@ -13,6 +13,9 @@ form.addEventListener('submit', e => {
 
 const showError = (Element, message) => {
   const inputControl = Element.parentElement;
+  const errorMessage = inputControl.querySelector('.error');
+  errorMessage.innerText = message;
+  inputControl.classList.add('errorMessage');
 };
 
 const validInput = () => {
@@ -23,5 +26,6 @@ const validInput = () => {
   // console.log(emailElement);
 
   if (userElement === '') {
+    showError(userName, 'User name cannot be empty');
   }
 };
