@@ -28,6 +28,7 @@ const setSuccess = Element => {
   inputControl.classList.add('successMessage');
 };
 
+// testing email validation
 const emailValidation = email => {
   const reTest = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
   return reTest.test(String(email).toLowerCase());
@@ -47,6 +48,7 @@ const validInput = () => {
     setSuccess(userName, 'User name is valid');
   }
 
+  // Email validation
   if (emailElement === '') {
     showError(userEmail, 'Email cannot be empty');
   } else if (!emailValidation(emailElement)) {
@@ -55,9 +57,20 @@ const validInput = () => {
     setSuccess(userEmail);
   }
 
+  // Password validation
   if (passwordElement === '') {
     showError(userPassword, 'Password cannot be empty');
   } else if (passwordElement.length < 8) {
     showError(userPassword, 'Password must be at least 8 characters');
+  } else {
+    setSuccess(userPassword);
+  }
+
+  if (confPasswordElement === '') {
+    showError(userConfPassword, 'Confirm Password cannot be empty');
+  } else if (confPasswordElement !== passwordElement) {
+    showError(userConfPassword, 'Password does not match');
+  } else {
+    setSuccess(userConfPassword);
   }
 };
